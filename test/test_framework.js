@@ -3,7 +3,7 @@ function addElement (message) {
   var newContent = document.createTextNode(message);
   newDiv.appendChild(newContent);
   var currentDiv = document.getElementById("div1");
-  document.body.insertBefore(newDiv, currentDiv);
+  currentDiv.appendChild(newDiv, currentDiv);
 }
 
 
