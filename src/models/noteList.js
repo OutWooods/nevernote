@@ -6,9 +6,7 @@
   }
 
   NoteList.prototype.addNewNote =  function(content){
-    console.log('1')
     let newNote = this.createNote(content);
-    console.log('2')
     this.store.push(newNote);
   }
 
