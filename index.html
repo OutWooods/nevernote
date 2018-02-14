@@ -1,3 +1,27 @@
-<script src= 'test/feature_tests/add_new_note_test.js'></script>
-
-<div id="Bob">Thing</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NeverNote</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src= 'src/models/note.js'></script>
+    <script src= 'src/models/noteList.js'></script>
+    <script src= 'src/controller/controller.js'></script>
+    <script src= 'src/views/view.js'></script>
+  </body>
+  </head>
+  <body onload="onLoad()">
+    <h1> Create note </h1>
+    <form>
+      Note:
+      <input name='noteContent' id='noteContent' type='text'>
+      <input type='submit' id="saveNote" value='Save note'>
+    </form>
+    <div class='notebox'>
+      <h2> Note List </h2>
+      <ul id='notelist'></ul>
+    </div>
+    <div class='notebody' id="notebody" ></div>
+    <script src= 'test/feature_tests/add_new_note_test.js'></script>
+  </body>
+</html>
