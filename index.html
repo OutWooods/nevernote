@@ -1,1 +1,24 @@
-<div id="Bob">Thing</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NeverNote</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src= 'src/models/note.js'></script>
+    <script src= 'src/models/noteList.js'></script>
+  </body>
+  </head>
+  <body>
+    <h1> Create note </h1>
+    <form>
+      Note:
+      <input name='note_content' type='text'>
+      <input type='submit' value='Save note'>
+    </form>
+    <div class='notebox'>
+      <h2> Note List </h2>
+      <ul id='notelist'></ul>
+    </div>
+    <div class='notebody'></div>
+  </body>
+</html>
