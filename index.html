@@ -12,13 +12,22 @@
     <h1> Create note </h1>
     <form>
       Note:
-      <input name='note_content' type='text'>
-      <input type='submit' value='Save note'>
+      <input name='noteContent' type='text'>
+      <input type='submit' id="saveNote" value='Save note'>
     </form>
     <div class='notebox'>
       <h2> Note List </h2>
       <ul id='notelist'></ul>
     </div>
     <div class='notebody'></div>
+    <script>
+      submitButtonControl();
+      function submitButtonControl(){
+        document.getElementById("saveNote").addEventListener("click", function(clickEvent){
+          clickEvent.preventDefault();
+          console.log("Submit Button")
+        })
+      }
+    </script>
   </body>
 </html>
