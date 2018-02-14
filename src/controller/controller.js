@@ -1,9 +1,9 @@
 (function(exports){
 
-var newNoteList;
+var NoteListInstance;
 
 function noteList(){
-  return newNoteList
+  return NoteListInstance
 }
 
 function submitButtonControl(){
@@ -15,7 +15,7 @@ function submitButtonControl(){
 }
 
 function onLoad() {
-  newNoteList = new NoteList(Note)
+  NoteListInstance = new NoteList(Note)
   submitButtonControl();
 }
 

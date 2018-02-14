@@ -2,8 +2,8 @@ function addElement (message) {
   var newDiv = document.createElement("div");
   var newContent = document.createTextNode(message);
   newDiv.appendChild(newContent);
-  var currentDiv = document.getElementById("div1");
-  currentDiv.appendChild(newDiv, currentDiv);
+  var currentDiv = document.getElementById('div1');
+  currentDiv.appendChild(newDiv);
 }
 
 
