@@ -1,8 +1,5 @@
-
-// Probably extract out these functions later
 function fillInForm(id, string) {
     document.getElementById(id).value = string
-    console.log("test");
   }
 
   function clickButton(id) {
@@ -15,4 +12,9 @@ function fillInForm(id, string) {
 
   function doesntHaveContent(id, string) {
    return !(document.getElementById(id).innerHTML.includes(string));
+  }
+
+  function runTests (){
+    testPageHasContent();
+    testUserCanAddNote();
   }
