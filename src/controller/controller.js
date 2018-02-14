@@ -1,18 +1,21 @@
 (function(exports){
 
-var noteList;
+var newNoteList;
+
+function noteList(){
+  return newNoteList
+}
 
 function submitButtonControl(){
   document.getElementById("saveNote").addEventListener("click", function(clickEvent){
     clickEvent.preventDefault();
-    noteList.addNewNote(document.getElementById("noteContent").value);
-    console.log("Submit Button:");
-    console.log(noteList.notes()[0]);
+    noteList().addNewNote(document.getElementById("noteContent").value);
+    displayNote()
   })
 }
 
 function onLoad() {
-  noteList = new NoteList(Note)
+  newNoteList = new NoteList(Note)
   submitButtonControl();
 }
 
