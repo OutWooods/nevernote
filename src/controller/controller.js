@@ -11,12 +11,15 @@ function submitButtonControl(){
     clickEvent.preventDefault();
     noteList().addNewNote(document.getElementById("noteContent").value);
     displayNote()
+    addNoteLink()
   })
 }
 
 function onLoad() {
   NoteListInstance = new NoteList(Note)
   submitButtonControl();
+  // currently including running tests here
+  runFeatureTests();
 }
 
 exports.onLoad = onLoad;

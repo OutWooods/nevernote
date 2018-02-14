@@ -1,17 +1,17 @@
 
-// Probably extract out these functions later
-function fillInForm(id, string) {
-    document.getElementById(id).value = string
-  }
 
-  function clickButton(id) {
-    document.getElementById(id).click();
-  }
 
-  function hasContent(id, string) {
-    return document.getElementById(id).innerHTML.includes(string);
-  }
+function seeAbbreviation() {
+  // setTimeout(function() {
+  fillInForm('noteContent', 'This is the best note taking app ever');
 
-  function doesntHaveContent(id, string) {
-   return !(document.getElementById(id).innerHTML.includes(string));
-  }
+  clickButton('saveNote');
+  assert.isTrue(hasContent('notelist', 'This is the best not'), 'should have content: This is the best not');
+  assert.isTrue(doesntHaveContent('notelist', 'e taking app ever'), 'does not have content: e taking app ever' );
+// }, 5000)
+}
+
+
+function runFeatureTests() {
+    seeAbbreviation();
+}

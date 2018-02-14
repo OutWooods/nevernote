@@ -6,7 +6,6 @@ function addElement (message) {
   currentDiv.appendChild(newDiv);
 }
 
-
 var assert = {
   isTrue: function(value, message) {
     if(!value) {

@@ -10,7 +10,7 @@ function testCreateNote(){
 
 function testAbbreviatedNote(){
   var note = Note.createNote('Note about abbreviated Note - for test purposes');
-  assert.isTrue(note.abbreviation === 'Note about abbrevia','Note abbreviated to 20 characters');
+  assert.isTrue(note.abbreviation === 'Note about abbreviat','Note abbreviated to 20 characters');
 }
 
 testNoteTextIsStored();
