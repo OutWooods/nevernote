@@ -3,4 +3,5 @@ function runTests (){
   testUserCanAddNote();
   seeAbbreviation();
   addMultipleNotes();
+  visitANote();
 }
