@@ -1,8 +1,4 @@
 (function(exports){
-  function displayNote(){
-    var newContent = document.createTextNode(noteList().notes()[0].text)
-    document.getElementById("notebody").appendChild(newContent)
-  }
   function addNoteLink() {
     var link = document.createElement('a');
     link.href = "#" + (noteList().notes().length - 1);
@@ -12,5 +8,4 @@
   }
 
   exports.addNoteLink = addNoteLink
-  exports.displayNote = displayNote
 })(this);

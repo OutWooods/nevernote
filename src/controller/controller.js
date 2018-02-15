@@ -10,7 +10,6 @@ function submitButtonControl(){
   document.getElementById("saveNote").addEventListener("click", function(clickEvent){
     clickEvent.preventDefault();
     noteList().addNewNote(document.getElementById("noteContent").value);
-    displayNote()
     addNoteLink()
   })
 }
@@ -21,13 +20,14 @@ function showSelectedNote() {
   window.addEventListener("hashchange", findNote);
 }
 
-function findNote (){
+function findNote(){
   console.log("good")
   displayNote(findIndex(window.location))
 }
 
-function displayNote (index){
-  document.getElementById('notebody').innerHTML = noteList().notes()[index].text
+function displayNote(index){
+  var textNote = noteList().notes()[index]
+  document.getElementById('notebody').innerHTML = textNote.text
 }
 
 function findIndex(location){
