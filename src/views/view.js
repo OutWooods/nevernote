@@ -4,7 +4,8 @@
     document.getElementById("notebody").appendChild(newContent)
   }
   function addNoteLink() {
-    var newLink = document.createTextNode(noteList().notes()[0].abbreviation)
+    var length = noteList().notes().length
+    var newLink = document.createTextNode(noteList().notes()[-1].abbreviation)
     document.getElementById('notelist').appendChild(newLink);
   }
 
