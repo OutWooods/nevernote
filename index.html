@@ -9,11 +9,12 @@
     <script src= 'src/controller/controller.js'></script>
     <script src= 'src/views/view.js'></script>
     <script src= 'test/test_framework.js'></script>
-    <script src= 'test/feature_tests/add_new_note_test.js'></script>
+    <script src= 'test/feature_tests/featureTestsRunner.js'></script>
+    <script src= 'test/feature_tests/addNewNoteTest.js'></script>
   </body>
   </head>
   <body onload="onLoad()">
-    <h1> Create note </h1>
+    <h1 id="note"> Create note </h1>
     <form>
       Note:
       <input name='noteContent' id='noteContent' type='text'>
@@ -24,8 +25,7 @@
       <ul id='notelist'></ul>
     </div>
     <div class='notebody' id="notebody" ></div>
-
-    <div id = 'div1'></div>
+    <div id="div1"></div>
 
   </body>
 </html>

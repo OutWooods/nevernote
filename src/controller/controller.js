@@ -19,8 +19,10 @@ function onLoad() {
   NoteListInstance = new NoteList(Note)
   submitButtonControl();
   // currently including running tests here
-  runFeatureTests();
+  runTests();
 }
+
+
 
 exports.onLoad = onLoad;
 exports.noteList = noteList;
