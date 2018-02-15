@@ -14,7 +14,7 @@ function latestNote(){
   var noteList = new NoteList(note2);
   noteList.addNewNote("Hello");
   noteList.addNewNote("Goodbye");
-  assert.isTrue(noteList.lastestNote() === 'Goodbye', 'Notelist returns latest note');
+  assert.isTrue(noteList.latestNote() === 'Goodbye', 'Notelist returns latest note');
 }
 
 testStoresNewNote();
