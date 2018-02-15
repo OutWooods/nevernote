@@ -27,7 +27,3 @@ exports.noteList = noteList;
 
 })(this)
 
-
-// document.addEventListener("click", function(clickEvent) {
-//           clickEvent.preventDefault();
-//      })
