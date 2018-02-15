@@ -7,4 +7,15 @@ function testStoresNewNote(){
   assert.isTrue(noteList.notes()[0] === newNote, 'Notelist stores a new note');
 }
 
+
+var note2 = { createNote: function(string) {return string} };
+
+function latestNote(){
+  var noteList = new NoteList(note2);
+  noteList.addNewNote("Hello");
+  noteList.addNewNote("Goodbye");
+  assert.isTrue(noteList.lastestNote() === 'Goodbye', 'Notelist returns latest note');
+}
+
 testStoresNewNote();
+latestNote();
