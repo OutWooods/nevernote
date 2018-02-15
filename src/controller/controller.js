@@ -17,9 +17,13 @@ function submitButtonControl(){
 function onLoad() {
   newNoteList = new NoteList(Note)
   submitButtonControl();
+  runTests();
 }
+
+
 
 exports.onLoad = onLoad;
 exports.noteList = noteList;
 
 })(this)
+
