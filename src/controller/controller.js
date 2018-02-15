@@ -1,9 +1,9 @@
 (function(exports){
 
-var newNoteList;
+var NoteListInstance;
 
 function noteList(){
-  return newNoteList
+  return NoteListInstance
 }
 
 function submitButtonControl(){
@@ -11,12 +11,14 @@ function submitButtonControl(){
     clickEvent.preventDefault();
     noteList().addNewNote(document.getElementById("noteContent").value);
     displayNote()
+    addNoteLink()
   })
 }
 
 function onLoad() {
-  newNoteList = new NoteList(Note)
+  NoteListInstance = new NoteList(Note)
   submitButtonControl();
+  // currently including running tests here
   runTests();
 }
 
@@ -26,4 +28,3 @@ exports.onLoad = onLoad;
 exports.noteList = noteList;
 
 })(this)
-
