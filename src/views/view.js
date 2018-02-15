@@ -4,9 +4,10 @@
     document.getElementById("notebody").appendChild(newContent)
   }
   function addNoteLink() {
-    document.createElement('a');
-    var newLink = document.createTextNode(noteList().latestNote().abbreviation)
-    document.getElementById('notelist').appendChild(newLink);
+    var link = document.createElement('a');
+    link.innerHTML = noteList().latestNote().abbreviation;
+    link.id = noteList().latestNote().abbreviation;
+    document.getElementById('notelist').appendChild(link);
   }
 
   exports.addNoteLink = addNoteLink
