@@ -30,7 +30,6 @@ I can see the full text of an individual note on its own page
 So I can see all the information in the note
 ```
 
-
 ## Technologies used
 * Javascript
 
