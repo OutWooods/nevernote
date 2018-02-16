@@ -8,6 +8,13 @@ We have implemented both unit and feature tests.
 
 At the moment the feature tests display is output to the index page, given more time we would have worked on this to output the results to a separate file. Given more time we would have liked to extract our testing framework.
 
+## Created by:
+
+* [Phil Bugden](https://github.com/philb56)
+* [Alexandra Fina](https://github.com/AlexandraGF)
+* [Leigh-ann Gant](https://github.com/Leigan0)
+* [Tom Grand](https://github.com/Tagrand)
+
 ## User stories
 ```
 As a programmer
