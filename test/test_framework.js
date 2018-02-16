@@ -4,13 +4,16 @@ function addSuccessDiv (message) {
   currentDiv.appendChild(newDiv);
 }
 
-function addErrorStack(message, err) {
-  messageDiv = createDiv("fail", 'Failure: ' + message + ' ' + err.message);
+function addErrorStack(err) {
+  messageDiv = createDiv("fail", 'Failure: ' + err);
   stackDiv = createDiv("stack", err.stack);
+
+  locationDiv = createDiv("location", err.fileName + ' at ' + err.lineNumber + ':' + err.columnNumber );
 
   failureDiv = createDiv("failure", "");
   failureDiv.appendChild(messageDiv);
   failureDiv.appendChild(stackDiv);
+  failureDiv.appendChild(locationDiv);
 
   var currentDiv = document.getElementById('div1');
   currentDiv.appendChild(failureDiv);
@@ -30,21 +33,29 @@ var it = function(message, tester) {
          addSuccessDiv(message)
        }
        catch(err) {
-          addErrorStack(message, err)
+          addErrorStack(err)
        }
+
 }
 
 
 var assert = {
   isTrue: (value, message) => {
     if(!value) {
-      throw new Error(`It should be true but is false...`)
+      throw new Error(`Failure: It should be true but is false...`)
      }
 },
 
   equals: (actual, expected) => {
     if(actual != expected) {
-     throw new Error(`Expected: ${expected}, Actual: ${actual}`)
+     throw new Error(`Failure!!!! Expected: ${expected}, Actual: ${actual}`)
+    }
+  },
+
+  hasContent: function(id, string) {
+    var innerText = document.getElementById(id).innerHTML;
+    if(!innerText.includes(string))  {
+      throw new Error(`Expected: ${string}, but we got ${innerText}`)
     }
   }
 }
@@ -60,9 +71,9 @@ function fillInForm(id, string) {
     document.getElementById(id).click();
   }
 
-  function hasContent(id, string) {
-    return document.getElementById(id).innerHTML.includes(string);
-  }
+  // function hasContent(id, string) {
+  //   return document.getElementById(id).innerHTML.includes(string);
+  // }
 
   function doesntHaveContent(id, string) {
    return !(document.getElementById(id).innerHTML.includes(string));
