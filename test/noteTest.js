@@ -1,19 +1,14 @@
-function testNoteTextIsStored() {
+it('Note stored argument passed on instantiation', function() {
    var note = new Note('Note 1');
-   assert.isTrue(note.text === 'Note 1', 'Note stored argument passed on instantiation');
-}
+   return assert.equals(note.text, 'Note 1');
+});
 
-function testCreateNote(){
+it("Returns a new note object", function(){
   var note = Note.createNote('Note 1')
-  assert.isTrue(note instanceof Note, "Returns a new note object")
-}
+  return assert.isTrue(note instanceof Note)
+});
 
-function testAbbreviatedNote(){
+it('Note abbreviated to 20 characters', function() {
   var note = Note.createNote('Note about abbreviated Note - for test purposes');
-  assert.isTrue(note.abbreviation === 'Note about abbreviat','Note abbreviated to 20 characters');
-}
-
-
-testNoteTextIsStored();
-testCreateNote();
-testAbbreviatedNote();
+  return assert.equals(note.abbreviation, 'Note about abbreviat');
+})

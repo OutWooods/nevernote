@@ -9,21 +9,16 @@ function addElement (message, id) {
 
 var it = function(message, tester) {
        var result = tester();
-       var id = (result.includes('Success')) ? 'success' : 'fail'
-       console.log(result)
-       console.log(result.includes('success'))
+       var id = (result.includes('success')) ? 'success' : 'fail'
        addElement(`${message}: ${result}`, id);
 }
 
-
-
-
-var assert = {
+var newAssert = {
   isTrue: (value, message) => {
     if(!value) {
-      addElement(`Failure: ${message}`);}
+      return `Failure: It should be true but is false...`;}
     else {
-      addElement(`Success: ${message}`);
+      return `Success! It should be true, and it is true...`;
    }
 },
 

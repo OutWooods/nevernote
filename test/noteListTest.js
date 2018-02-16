@@ -4,7 +4,7 @@ var note = { createNote: function() {return newNote} };
 it('Notelist stores a new note', function() {
   var noteList = new NoteList(note);
   noteList.addNewNote("Hello");
-  return assert.equals(noteList.notes()[0], newNote);
+  return assert.isTrue(noteList.notes().includes(newNote));
 });
 
 
