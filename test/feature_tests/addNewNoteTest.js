@@ -8,7 +8,7 @@ function addNewNoteTest(){
     fillInForm('noteContent', 'This is the best note taking app ever');
     clickButton('saveNote');
     assert.hasContent('notelist', 'This is the best not');
-    assert.isTrue(doesntHaveContent('notelist', 'e taking app ever'), 'does not have content: e taking app ever' );
+    assert.doesntHaveContent('notelist', 'e taking app ever');
   })
 
   it('handles clicking on a link', function() {
@@ -17,9 +17,9 @@ function addNewNoteTest(){
     fillInForm('noteContent', "Goodnight, I really had a good dinner!");
     clickButton('saveNote');
     assert.hasContent('notelist', 'Hello you there, gor');
-    assert.isTrue(doesntHaveContent('notelist', 'geous person'));
+    assert.doesntHaveContent('notelist', 'geous person');
     assert.hasContent('notelist', 'Goodnight, I really ');
-    assert.isTrue(doesntHaveContent('notelist', 'had a go'));
+    assert.doesntHaveContent('notelist', 'had a go');
   })
 
 }

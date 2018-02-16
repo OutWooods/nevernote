@@ -57,28 +57,26 @@ var assert = {
     if(!innerText.includes(string))  {
       throw new Error(`Expected: ${string}, but we got ${innerText}`)
     }
+  },
+  
+  doesntHaveContent: (id, string) => {
+    var innerText = document.getElementById(id).innerHTML;
+    if (innerText.includes(string)) {
+      throw new Error(`Expected: ${string} to not be present in ${innerText}`)
+    };
   }
+
 }
-
-
 
 //feature tests
 function fillInForm(id, string) {
-    document.getElementById(id).value = string
-  }
+  document.getElementById(id).value = string
+}
 
-  function clickButton(id) {
-    document.getElementById(id).click();
-  }
+function clickButton(id) {
+  document.getElementById(id).click();
+}
 
-  // function hasContent(id, string) {
-  //   return document.getElementById(id).innerHTML.includes(string);
-  // }
-
-  function doesntHaveContent(id, string) {
-   return !(document.getElementById(id).innerHTML.includes(string));
-  }
-
-  function clickLink(id) {
-    document.getElementById(id).click();
-  }
+function clickLink(id) {
+  document.getElementById(id).click();
+}
