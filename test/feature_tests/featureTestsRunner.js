@@ -3,4 +3,5 @@ function runTests (){
   seeAbbreviation();
   addMultipleNotes();
   visitANote();
+  testStackDump();
 }
