@@ -15,13 +15,10 @@ function submitButtonControl(){
 }
 
 function showSelectedNote() {
-  console.log("hamster")
-  console.log(window)
   window.addEventListener("hashchange", findNote);
 }
 
 function findNote(){
-  console.log("good")
   displayNote(findIndex(window.location))
 }
 
@@ -31,8 +28,6 @@ function displayNote(index){
 }
 
 function findIndex(location){
-  console.log("hello")
-  console.log(location);
   return location.hash.split("#")[1];
 }
 
