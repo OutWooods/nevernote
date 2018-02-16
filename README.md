@@ -1,4 +1,4 @@
-#NeverNote
+# NeverNote
 
 We have created a frontend, single page app using pure Javascript. The app has been created to meet the given user stories below.
 
@@ -39,4 +39,4 @@ So I can see all the information in the note
 
 ## What it looks like - App
 
-![alt text](https://files.slack.com/files-tmb/T03ALA7H4-F9BCKQ53R-0ab03f0ffa/screen_shot_2018-02-16_at_15.44.38_1024.png)
+![alt text](https://i.imgur.com/wkCJSbS.png)
