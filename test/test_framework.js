@@ -7,6 +7,7 @@ function addSuccessDiv (message) {
 function addErrorStack(err) {
   messageDiv = createDiv("fail", 'Failure: ' + err);
   stackDiv = createDiv("stack", err.stack);
+  console.log(err);
   locationDiv = createDiv("location", err.fileName + ' at ' + err.lineNumber + ':' + err.columnNumber );
 
   failureDiv = createDiv("failure", "");
