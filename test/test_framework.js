@@ -9,7 +9,15 @@ function addElement (message) {
 var assert = {
   isTrue: function(value, message) {
     if(!value) {
-      addElement(`Failure: ${message}`);}
+      try{
+        throw new Error(message);
+      }
+      catch(err) {
+        addElement(err.stack);
+      }
+
+      // addElement(`Failure: ${message}`);
+    }
     else {
       addElement(`Success: ${message}`);
    }

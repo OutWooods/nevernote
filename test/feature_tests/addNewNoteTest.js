@@ -20,3 +20,8 @@ function addMultipleNotes(){
   assert.isTrue(hasContent('notelist', 'Goodnight, I really '), 'should have content: Goodnight, I really ');
   assert.isTrue(doesntHaveContent('notelist', 'had a go'), 'does not have content: had a go' );
 }
+
+
+function testStackDump() {
+  assert.isTrue(1 == 2, 'Test message not good');
+}
