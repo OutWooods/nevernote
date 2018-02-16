@@ -58,3 +58,12 @@ body {
   margin-left: 350px;
 }
 
+#success {
+  color: rgb(75, 213, 47);
+  font-size: 25px;
+}
+
+#failure {
+  color: red;
+  font-size: 25px;
+}
