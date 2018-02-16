@@ -30,11 +30,11 @@ function createDiv(id, text) {
 var it = function(message, tester) {
        try{
          tester()
+         addSuccessDiv(message)
        }
        catch(err) {
-          return addErrorStack(err)
+          addErrorStack(err)
        }
-      return  addSuccessDiv(message)
 }
 
 
