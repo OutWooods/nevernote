@@ -5,7 +5,7 @@ function addSuccessDiv (message) {
 }
 
 function addErrorStack(err) {
-  messageDiv = createDiv("fail", 'Failure: ' + err.message);
+  messageDiv = createDiv("fail", 'Failure: ' + err);
   stackDiv = createDiv("stack", err.stack);
   locationDiv = createDiv("location", err.fileName + ' at ' + err.lineNumber + ':' + err.columnNumber );
 
@@ -31,7 +31,6 @@ var it = function(message, tester) {
          tester()
        }
        catch(err) {
-         console.error(err)
           return addErrorStack(err)
        }
       return  addSuccessDiv(message)
@@ -40,13 +39,14 @@ var it = function(message, tester) {
 
 var assert = {
   isTrue: (value, message) => {
-    if(!value) { throw `Failure: It should be true but is false...`;  }
+    if(!value) {
+      throw new Error(`Failure: It should be true but is false...`)
+     }
 },
-
 
   equals: (actual, expected) => {
     if(actual != expected) {
-     throw `Failure!!!! Actual: ${actual}, expected: ${expected}`
+     throw new Error(`Failure!!!! Expected: ${expected}, Actual: ${actual}`)
     }
   }
 }
