@@ -1,21 +1,20 @@
 var newNote = {}
 var note = { createNote: function() {return newNote} };
 
-function testStoresNewNote(){
+it('Notelist stores a new note', function() {
   var noteList = new NoteList(note);
   noteList.addNewNote("Hello");
-  assert.isTrue(noteList.notes()[0] === newNote, 'Notelist stores a new note');
-}
+  return assert.isTrue(noteList.notes().includes(newNote));
+});
+
 
 
 var note2 = { createNote: function(string) {return string} };
 
-function latestNote(){
+
+it('Notelist returns latest note', function() {
   var noteList = new NoteList(note2);
   noteList.addNewNote("Hello");
   noteList.addNewNote("Goodbye");
-  assert.isTrue(noteList.latestNote() === 'Goodbye', 'Notelist returns latest note');
-}
-
-testStoresNewNote();
-latestNote();
+  return assert.equals(noteList.latestNote(), 'Goodbye');
+});

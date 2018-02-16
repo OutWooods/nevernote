@@ -4,19 +4,38 @@ function addElement (message) {
   currentDiv.appendChild(newDiv);
 }
 
-var assert = {
-  isTrue: function(value, message) {
-    if(!value) {
-      try{
+var it = function(message, tester) {
+       var result = tester();
+       var id = (result.includes('success')) ? 'success' : 'fail'
+       addElement(`${message}: ${result}`, id);
+}
+
+var throw = function(){
+     try{
         throw new Error(message);
       }
       catch(err) {
         addPrettifiedError(err);
       }
     }
-    else {
-      addElement(`Success: ${message}`);
+}
+
+var newAssert = {
+  isTrue: (value, message) => {
+    if(!value) {
+      return `Failure: It should be true but is false...`;
+    } else {
+      return `Success! It should be true, and it is true...`;
    }
+},
+
+  equals: (actual, expected) => {
+    if(actual === expected) {
+      return `Success! Actual: ${actual}, expected: ${expected}`
+    }
+    else {
+     return `Failure!!!! Actual: ${actual}, expected: ${expected}`
+    }
   }
 }
 

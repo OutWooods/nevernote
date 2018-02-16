@@ -4,3 +4,15 @@
     padding: 100px;
     margin: 25px;
 }
+
+
+#fail {
+  color: #ff0000;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#success {
+  color: rgb(0, 255, 0);
+  font-size: 25px;
+}
