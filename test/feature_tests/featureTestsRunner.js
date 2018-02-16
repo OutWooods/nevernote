@@ -1,7 +1,4 @@
 function runTests (){
-  testPageHasContent();
-  seeAbbreviation();
-  addMultipleNotes();
+  addNewNoteTest();
   visitANote();
-  testStackDump();
 }
