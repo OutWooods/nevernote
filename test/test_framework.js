@@ -4,23 +4,39 @@ function addElement (message) {
   currentDiv.appendChild(newDiv);
 }
 
+function addPrettifiedError(err) {
+  messageDiv = createDiv("errorMessage", 'Failure: ' + err.message);
+  stackDiv = createDiv("stack", err.stack);
+  locationDiv = createDiv("location", err.fileName + ' at ' + err.lineNumber + ':' + err.columnNumber );
+
+  failureDiv = createDiv("failure", "");
+  failureDiv.appendChild(messageDiv);
+  failureDiv.appendChild(stackDiv);
+  failureDiv.appendChild(locationDiv);
+
+  var currentDiv = document.getElementById('div1');
+  currentDiv.appendChild(failureDiv);
+}
+
+
+
 var it = function(message, tester) {
        var result = tester();
        var id = (result.includes('success')) ? 'success' : 'fail'
        addElement(`${message}: ${result}`, id);
 }
 
-var throw = function(){
-     try{
-        throw new Error(message);
-      }
-      catch(err) {
-        addPrettifiedError(err);
-      }
-    }
-}
+// var throw = function(){
+//      try{
+//         throw new Error(message);
+//       }
+//       catch(err) {
+//         addPrettifiedError(err);
+//       }
+//     }
+// }
 
-var newAssert = {
+var assert = {
   isTrue: (value, message) => {
     if(!value) {
       return `Failure: It should be true but is false...`;
@@ -47,19 +63,7 @@ function createDiv(id, text) {
   return Div;
 }
 
-function addPrettifiedError(err) {
-  messageDiv = createDiv("errorMessage", 'Failure: ' + err.message);
-  stackDiv = createDiv("stack", err.stack);
-  locationDiv = createDiv("location", err.fileName + ' at ' + err.lineNumber + ':' + err.columnNumber );
 
-  failureDiv = createDiv("failure", "");
-  failureDiv.appendChild(messageDiv);
-  failureDiv.appendChild(stackDiv);
-  failureDiv.appendChild(locationDiv);
-
-  var currentDiv = document.getElementById('div1');
-  currentDiv.appendChild(failureDiv);
-}
 
 function fillInForm(id, string) {
     document.getElementById(id).value = string
