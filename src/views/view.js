@@ -1,13 +1,11 @@
 (function(exports){
-  function displayNote(){
-    var newContent = document.createTextNode(noteList().notes()[0].text)
-    document.getElementById("notebody").appendChild(newContent)
-  }
   function addNoteLink() {
-    var newLink = document.createTextNode(noteList().notes()[0].abbreviation)
-    document.getElementById('notelist').appendChild(newLink);
+    var link = document.createElement('a');
+    link.href = "#" + (noteList().notes().length - 1);
+    link.innerHTML = noteList().latestNote().abbreviation;
+    link.id = noteList().latestNote().abbreviation;
+    document.getElementById('notelist').appendChild(link);
   }
 
   exports.addNoteLink = addNoteLink
-  exports.displayNote = displayNote
 })(this);

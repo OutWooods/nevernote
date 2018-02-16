@@ -18,5 +18,10 @@
     return this.store.slice()
   }
 
+  NoteList.prototype.latestNote = function() {
+    var length = this.store.length -1;
+    return this.store[length];
+  }
+
   exports.NoteList = NoteList;
 })(this);

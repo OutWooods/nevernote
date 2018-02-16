@@ -13,7 +13,7 @@ function testAbbreviatedNote(){
   assert.isTrue(note.abbreviation === 'Note about abbreviat','Note abbreviated to 20 characters');
 }
 
+
 testNoteTextIsStored();
 testCreateNote();
 testAbbreviatedNote();
-//

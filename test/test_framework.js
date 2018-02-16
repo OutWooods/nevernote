@@ -31,3 +31,7 @@ function fillInForm(id, string) {
   function doesntHaveContent(id, string) {
    return !(document.getElementById(id).innerHTML.includes(string));
   }
+
+  function clickLink(id) {
+    document.getElementById(id).click();
+  }
