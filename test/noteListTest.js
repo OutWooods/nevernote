@@ -16,5 +16,5 @@ it('Notelist returns latest note', function() {
   var noteList = new NoteList(note2);
   noteList.addNewNote("Hello");
   noteList.addNewNote("Goodbye");
-  return assert.equals(noteList.latestNote(), 'Goodbye');
+  return assert.equals(noteList.latestNote(), 'hello');
 });

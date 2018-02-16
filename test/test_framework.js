@@ -1,55 +1,13 @@
-function addElement (message) {
+function addSuccessDiv (message) {
   newDiv = createDiv("success", message);
   var currentDiv = document.getElementById('div1');
   currentDiv.appendChild(newDiv);
 }
 
-var it = function(message, tester) {
-       var result = tester();
-       var id = (result.includes('success')) ? 'success' : 'fail'
-       addElement(`${message}: ${result}`, id);
-}
-
-var throw = function(){
-     try{
-        throw new Error(message);
-      }
-      catch(err) {
-        addPrettifiedError(err);
-      }
-    }
-}
-
-var newAssert = {
-  isTrue: (value, message) => {
-    if(!value) {
-      return `Failure: It should be true but is false...`;
-    } else {
-      return `Success! It should be true, and it is true...`;
-   }
-},
-
-  equals: (actual, expected) => {
-    if(actual === expected) {
-      return `Success! Actual: ${actual}, expected: ${expected}`
-    }
-    else {
-     return `Failure!!!! Actual: ${actual}, expected: ${expected}`
-    }
-  }
-}
-
-function createDiv(id, text) {
-  var Div = document.createElement("div");
-  Div.id = id;
-  var message = document.createTextNode(text);
-  Div.appendChild(message);
-  return Div;
-}
-
-function addPrettifiedError(err) {
-  messageDiv = createDiv("errorMessage", 'Failure: ' + err.message);
+function addErrorStack(err) {
+  messageDiv = createDiv("fail", 'Failure: ' + err);
   stackDiv = createDiv("stack", err.stack);
+  console.log(err);
   locationDiv = createDiv("location", err.fileName + ' at ' + err.lineNumber + ':' + err.columnNumber );
 
   failureDiv = createDiv("failure", "");
@@ -61,6 +19,42 @@ function addPrettifiedError(err) {
   currentDiv.appendChild(failureDiv);
 }
 
+function createDiv(id, text) {
+  var Div = document.createElement("div");
+  Div.id = id;
+  var message = document.createTextNode(text);
+  Div.appendChild(message);
+  return Div;
+}
+
+var it = function(message, tester) {
+       try{
+         tester()
+         addSuccessDiv(message)
+       }
+       catch(err) {
+          addErrorStack(err)
+       }
+}
+
+
+var assert = {
+  isTrue: (value, message) => {
+    if(!value) {
+      throw new Error(`Failure: It should be true but is false...`)
+     }
+},
+
+  equals: (actual, expected) => {
+    if(actual != expected) {
+     throw new Error(`Failure!!!! Expected: ${expected}, Actual: ${actual}`)
+    }
+  }
+}
+
+
+
+//feature tests
 function fillInForm(id, string) {
     document.getElementById(id).value = string
   }
